@@ -27,26 +27,17 @@ public class UserController {
         return "userlist";
     }
     @RequestMapping(value = "/user-save", method = RequestMethod.POST)
-    public String saveUser(@RequestParam(value = "name") String name,
-                           @RequestParam(value = "last_name") String lastname,
-                           @RequestParam(value = "email")String email) {
-        User user = new User(name, lastname, email);
-        userService.saveUser(user);
+    public String saveUser(User user) {
+       userService.saveUser(user);
         return "redirect:/users";
     }
     @RequestMapping(value = "/user-save", method=RequestMethod.GET)
     public String saveUserPage() {
         return "saveuser";
     }
+
     @RequestMapping(value = "/user-update", method = RequestMethod.POST)
-    public String updateUser(@RequestParam(value = "id")Long id,
-                             @RequestParam(value = "name")String name,
-                             @RequestParam(value = "last_name") String lastname,
-                             @RequestParam(value = "email")String email) {
-        User user = userService.findUser(id);
-        user.setFirstName(name);
-        user.setLastName(lastname);
-        user.setEmail(email);
+    public String updateUser(User user) {
         userService.updateUser(user);
         return "redirect:/users";
     }
@@ -54,6 +45,7 @@ public class UserController {
     public String updateUserPage() {
         return "updateuser";
     }
+
     @RequestMapping(value = "/user-delete/{id}", method = RequestMethod.GET)
     public String deleteUser(@PathVariable Long id) {
         User user = userService.findUser(id);

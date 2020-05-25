@@ -40,7 +40,7 @@
         </tr>
     </c:forEach>
 </table><br>
-<a href="/user-save">Save User</a>
+<a href="/user-save">Add User</a>
 
 </body>
 </html>

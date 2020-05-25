@@ -16,8 +16,8 @@
 
 <form action="/user-update" method="post">
     <input type="hidden" name="id"  value="${param.id}">
-    <input type="text" name="name"  value="${param.name}" required>
-    <input type="text" name="last_name"  value="${param.last_name}" required>
+    <input type="text" name="firstName"  value="${param.name}" required>
+    <input type="text" name="lastName"  value="${param.last_name}" required>
     <input type="text" name="email"  value="${param.email}" required>
     <input type="submit" value="Update">
 </form>

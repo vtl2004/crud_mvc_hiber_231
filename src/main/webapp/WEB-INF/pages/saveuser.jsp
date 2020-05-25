@@ -12,8 +12,8 @@
 </head>
 <body>
 <form action="user-save" method="post">
-    <input type="text" name="name" placeholder="Name" required>
-    <input type="text" name="last_name" placeholder="Last Name" required>
+    <input type="text" name="firstName" placeholder="Name" required>
+    <input type="text" name="lastName" placeholder="Last Name" required>
     <input type="text" name="email" placeholder="email" required>
     <input type="submit" value="submit">
 </form>
